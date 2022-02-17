@@ -1,26 +1,23 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
 
-function App() {
+import { Clock, ClockContainer } from './components';
+import { ThemeContext } from './contexts';
+
+export const App: React.FC = () => {
+  const themeContextData = {
+    colorFg: '#36ff00', // 520nm wavelength of green phosphor displays
+    colorBg: '#222b21',
+  };
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className='App'>
+      <ThemeContext.Provider value={themeContextData}>
+        <ClockContainer>
+          <Clock />
+        </ClockContainer>
+      </ThemeContext.Provider>
     </div>
   );
-}
+};
 
 export default App;
