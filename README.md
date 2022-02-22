@@ -45,7 +45,7 @@ Alternatively, fix some lint errors in place:
 
 Some ideas
 
-- [ ] Extract all time related magic numbers into some sort of model layer
+- [x] Extract all time related magic numbers into some sort of model layer
 - [ ] Play with CSS/SVG WebGL shaders to further simulate a CRT display
 - [ ] Make some typed helpers for rendering SVG path command strings
 - [ ] Time travel

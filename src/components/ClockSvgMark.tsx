@@ -4,7 +4,6 @@ import React, { useContext } from 'react';
 
 import { SvgContext } from '../contexts';
 import { Degrees } from '../support/types';
-import { safeDegrees } from '../support/utils';
 
 interface ClockSvgMarkProps {
   rotation: Degrees;
@@ -17,7 +16,7 @@ export const ClockSvgMark: React.FC<ClockSvgMarkProps> = ({
 }) => {
   const { box, vectorProps } = useContext(SvgContext);
 
-  const transform = `rotate(${safeDegrees(rotation)} ${box.centerX} ${box.centerY})`;
+  const transform = `rotate(${rotation} ${box.centerX} ${box.centerY})`;
 
   const props = {
     y1: bold ? box.height(8/64) : box.height(5/64),

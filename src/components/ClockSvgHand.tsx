@@ -4,7 +4,6 @@ import React, { useContext } from 'react';
 
 import { SvgContext } from '../contexts';
 import { Degrees, UnitValue } from '../support/types';
-import { safeDegrees } from '../support/utils';
 
 interface ClockSvgHandProps {
   rotation: Degrees;
@@ -19,7 +18,7 @@ export const ClockSvgHand: React.FC<ClockSvgHandProps> = ({
 }) => {
   const { box, vectorProps } = useContext(SvgContext);
 
-  const transform = `rotate(${safeDegrees(rotation)} ${box.centerX} ${box.centerY})`;
+  const transform = `rotate(${rotation} ${box.centerX} ${box.centerY})`;
   const margin = box.size(5 / 48); // margin between the pointy end and the clock edge
   const toff = box.size(thickness) / 2; // thickness of the hand
 
